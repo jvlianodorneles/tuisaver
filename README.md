@@ -18,7 +18,7 @@
     - Integrated link to [AI Colors](https://www.bairesdev.com/tools/ai-colors) for palette inspiration.
 - **Workflow Integration:**
     - **Copy to Clipboard:** Instantly copy the result with `Ctrl+C`.
-    - **Screensaver Sync:** Set your art as your Omarchy system screensaver with one click (`Ctrl+S`).
+    - **Screensaver Sync:** Set your art as your [Omarchy](https://omarchy.org/) system screensaver with one click (`Ctrl+S`).
 - **Modern UI:** Built with a sleek sidebar layout, high-contrast focus states, and responsive design.
 
 ## 🚀 Installation

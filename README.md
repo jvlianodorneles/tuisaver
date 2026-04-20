@@ -52,7 +52,7 @@ python3 tuisaver.py
 | Shortcut | Action |
 | :--- | :--- |
 | `Ctrl + C` | Copy generated art to clipboard |
-| `Ctrl + S` | Save art to screensaver path |
+| `Ctrl + S` | Save art to Omarchy screensaver path |
 | `Ctrl + T` | Open the Theme Editor |
 | `Esc` | Close Theme Editor / Cancel |
 | `Tab` | Navigate between inputs and buttons |

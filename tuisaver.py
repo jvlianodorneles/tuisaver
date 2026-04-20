@@ -53,7 +53,6 @@ class ThemeModal(ModalScreen):
         self.query_one("#theme-input", TextArea).text = self.app.custom_theme_str
 
     def on_click(self, event: Click) -> None:
-        """Handle clicks on the link static widget."""
         if event.widget.id == "theme-link":
             webbrowser.open("https://www.bairesdev.com/tools/ai-colors")
             self.app.notify("Opening browser...")
@@ -123,6 +122,7 @@ class AsciiArtApp(App):
         background: #1f2b3e;
         border-right: heavy #1F3A5F;
         padding: 1 2;
+        overflow-y: auto;
     }
 
     #canvas-container {
@@ -132,12 +132,12 @@ class AsciiArtApp(App):
     }
 
     #ascii-frame {
-        width: 100%;
-        height: 100%;
+        height: 1fr;
         border: double #3D5A80;
         background: #0F1C2E;
         overflow: auto auto;
         padding: 1;
+        margin-bottom: 1;
     }
 
     #ascii-output {
@@ -180,17 +180,24 @@ class AsciiArtApp(App):
         background: #1f2b3e;
     }
 
+    #button-bar {
+        height: auto;
+        align: center middle;
+        padding: 0;
+    }
+
     .btn-action {
-        width: 100%;
-        margin-top: 1;
-        height: 3;
+        width: 28;
+        margin: 0 1;
+        height: 4;
         text-style: bold;
         border: none;
+        content-align: center middle;
     }
 
     #btn-copy { background: #1F3A5F; color: #FFFFFF; }
     #btn-save { background: #4d648d; color: #FFFFFF; }
-    #btn-theme { background: #3D5A80; color: #FFFFFF; margin-top: 2; }
+    #btn-theme { background: #3D5A80; color: #FFFFFF; }
 
     .btn-action:focus {
         background: #acc2ef;
@@ -199,13 +206,14 @@ class AsciiArtApp(App):
     }
 
     #info-panel {
-        margin-top: 1;
+        margin-top: 2;
         padding: 1;
         background: #1f2b3e;
         color: #cee8ff;
         text-align: center;
         height: 5;
         content-align: center middle;
+        margin-bottom: 2;
     }
     """
 
@@ -273,15 +281,16 @@ class AsciiArtApp(App):
                 yield Label("Vertical Kerning", id="label-v-kerning")
                 yield Select(self.layout_options, value=self.v_layout, id="v-layout-select", allow_blank=False)
 
-                yield Button("COPY (Ctrl+C)", id="btn-copy", classes="btn-action")
-                yield Button("SET AS SCREENSAVER (Ctrl+S)", id="btn-save", classes="btn-action")
-                yield Button("THEME EDITOR (Ctrl+T)", id="btn-theme", classes="btn-action")
-                
                 yield Static(id="info-panel")
 
             with Vertical(id="canvas-container"):
                 with Container(id="ascii-frame"):
                     yield Static(id="ascii-output")
+                
+                with Horizontal(id="button-bar"):
+                    yield Button("\nCOPY\n(CTRL+C)\n", id="btn-copy", classes="btn-action")
+                    yield Button("\nSET AS SCREENSAVER\n(CTRL+S)\n", id="btn-save", classes="btn-action")
+                    yield Button("\nTHEME EDITOR\n(CTRL+T)\n", id="btn-theme", classes="btn-action")
         yield Footer()
 
     def on_mount(self) -> None:

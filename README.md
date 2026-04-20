@@ -2,7 +2,7 @@
 
 **TUIsaver** is a modern Terminal User Interface (TUI) application built with Python and Textual. It allows you to transform text into beautiful ASCII art instantly, with a focus on ease of use, aesthetic customization, and integration with terminal-based workflows.
 
-![TUIsaver Preview](https://via.placeholder.com/800x400?text=TUIsaver+ASCII+Art+Studio) *(Tip: Replace this with an actual screenshot of your app!)*
+![TUIsaver Preview](https://github.com/jvlianodorneles/tuisaver/blob/main/tuisaver.png)
 
 ## ✨ Features
 
